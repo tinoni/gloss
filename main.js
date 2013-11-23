@@ -1,5 +1,4 @@
 /**
- * Created with JetBrains WebStorm.
  * User: mfernandes
  * Date: 22/11/13
  * Time: 14:42
@@ -38,8 +37,7 @@ $(function() {
     context.beginPath();
     context.arc(d/2, d/2, d/2, 0, Math.PI * 2, false);
     context.clip();
-
-    //draw image. TODO: only draw on image load
+    //draw image
     context.drawImage(src_img, 0, 0, d, d);
     context.restore();  //end clipping path
 
@@ -51,7 +49,6 @@ $(function() {
     var gradient_innerglow = context.createRadialGradient(d/3, d/1.2, 0, d/2, d/2, d/2);
     gradient_innerglow.addColorStop(0.0, 'rgba(255,255,255,0)');
     gradient_innerglow.addColorStop(1.0, 'rgba(0,0,255,0.9)');   //with transparency
-
     //draw
     context.fillStyle = gradient_innerglow;
     context.beginPath();
@@ -65,7 +62,6 @@ $(function() {
     var gradient_linear = context.createLinearGradient(d/2, 0, d/2, d/2);
     gradient_linear.addColorStop(0.0, 'rgba(255,255,255,1)');
     gradient_linear.addColorStop(1.0, 'rgba(255,255,255,0.1)');
-
     //draw
     context.save();
     // scale context horizontally
@@ -78,6 +74,24 @@ $(function() {
     // apply styling
     context.fillStyle = gradient_linear;
     context.fill();
+
+
+
+    //shinning
+    var x = d/3;
+    var y = d/1.2;
+    var r = d/7;
+    context.save();
+    var gradient_innerglow = context.createRadialGradient(x, y, 0, x, y, r);
+    gradient_innerglow.addColorStop(0.0, 'rgba(255,255,255,1)');
+    gradient_innerglow.addColorStop(1.0, 'rgba(255,255,255,0)');   //with transparency
+    //draw
+    context.fillStyle = gradient_innerglow;
+    context.beginPath();
+    context.arc(x, y, r, 0, Math.PI * 2, false);
+    context.fill();
+    context.restore();
+
 
 
 
@@ -99,7 +113,6 @@ $(function() {
       context.restore();
 
     };
-
     elypse(d/2, d/1.3, d/2.7, d/4);  //shadow
 
 
