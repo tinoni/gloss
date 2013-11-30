@@ -1,36 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Manuel Fernandes">
 
-  <title>gloss</title>
+    <title>glossify.js</title>
 
-</head>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<body>
+    <!-- Custom styles for this template -->
+    <link href="glossifyjs.css" rel="stylesheet">
+  </head>
 
-  <!--canvas id="b" width="600" height="400" style="border: 1px dotted;" alt="canvas" title="canvas"></canvas-->
+  <body>
 
-  <img src="r01.jpg" data-gloss data-glosscolor="009999" width="100"/>
-  <img src="r02.jpg" data-gloss data-glosscolor="009999" data-glossalpha="0.3"/>
-  <img src="r03.jpg" data-gloss data-glosscolor="99ffaa"/>
-  <img src="r04.jpg"/>
-  <img src="r04.jpg" data-gloss data-glosscolor="333333"/>
-  <img src="r05.jpg" data-gloss data-glosscolor="333333" width="90"/>
-  <img src="r06.jpg" data-gloss data-glosscolor="009999"/>
+  <!-- NAVBAR
+================================================== -->
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only trn">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">glossify.js</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#" class="trn">Home</a></li>
+          <li><a href="#" class="trn" data-toggle="modal" data-target="#modal_about">About</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 
-  <img src="sample.jpg" data-gloss data-glosscolor="990099" data-glossalpha="0.7"/>
-  <img src="explosion.png" data-gloss/>
-  <img src="sample.jpg" data-gloss data-glosscolor="009999" width="150" height="150"/>
-  <img src="sample.jpg" data-gloss data-glosscolor="ff99aa" width="200" height="200"/>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>glossify.js</h1>
+        <p class="trn" data-trn-key="subtitle_key">glossify.js is a jQuery plugin that transforms any image into a glossy sphere.</p>
+        <p><a class="btn btn-primary btn-lg trn" role="button" href="https://github.com/tinoni/translate.js" target="_blank">Download glossify.js</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="trn">Usage: translate entire page</h2>
+          <p><strong><span class="trn">Step</span> 1</strong>: <span class="trn" data-trn-key="step1">include JQuery and translate.js in your page</span></p>
+          <pre>&lt;script src="jquery.js"/&gt;
+&lt;script src="jquery.translate.js"/&gt;</pre>
+
+          <p><strong><span class="trn">Step</span> 2</strong>: <span class="trn" data-trn-key="step2">every text you want translated include the <code>trn</code> class</span></p>
+          <pre>&lt;span class="trn"&gt;text to translate&lt;/span&gt;</pre>
+
+          <p><strong><span class="trn">Step</span> 3</strong>: <span class="trn" data-trn-key="step3">create your dictionary</span></p>
+          <pre>var dict = {
+  "Home": {
+    pt: "Início"
+  },
+  "Download plugin": {
+    pt: "Descarregar plugin",
+    en: "Download plugin"
+  }
+}</pre>
+
+          <p><strong><span class="trn">Step</span> 4</strong>: <span class="trn" data-trn-key="step4">initialize the plugin and translate the entire page body</span></p>
+          <pre>var translator = $('body').translate({lang: "en", t: dict}); //use English</pre>
+
+          <p><strong><span class="trn">Step</span> 5</strong>: <span class="trn" data-trn-key="step5">change to another language</span></p>
+          <pre>translator.lang("pt"); //change to Portuguese</pre>
+
+          <p><strong><span class="trn">Step</span> 6</strong>: <span class="trn" data-trn-key="step6">try it</span></p>
+          <p>
+            <a class="btn btn-default lang_selector trn" href="#" role="button" data-value="en">translate to English</a>
+            <a class="btn btn-default lang_selector trn" href="#" role="button"  data-value="pt">translate to Portuguese</a>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="trn">Usage: translate a string</h2>
+          <p class="trn" data-trn-key="string_translate_key">After you initialize the component you can translate a string</p>
+          <pre>var translation = translator.get("Home"); //returns "Início"</pre>
+
+       </div>
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Manuel Fernandes 2013</p>
+      </footer>
+    </div> <!-- /container -->
 
 
 
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="glossify.js"></script>
-</body>
+
+    <!-- Modal About-->
+    <div class="modal fade" id="modal_about" tabindex="-1" role="dialog" aria-labelledby="modal_about_label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title trn" id="modal_about_label">About</h4>
+          </div>
+          <div class="modal-body">
+            <p><a href="http://www.openxrest.com/contact/" target="_blank">by Manuel Fernandes</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal  -->
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
-
-
-
