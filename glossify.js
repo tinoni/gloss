@@ -7,6 +7,19 @@
 
 var magic_gloss = {
 
+  supports_canvas: function () {
+    return !!document.createElement('canvas').getContext;
+  },
+
+  supports_ToDataURL: function () {
+    if(!this.supports_canvas()) return false;
+
+    var canvas = document.createElement("canvas");
+    var data = canvas.toDataURL("image/png");
+    return (data.indexOf("data:image/png") == 0);
+  },
+
+
   hex2rgb:  function (hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
@@ -145,6 +158,10 @@ var magic_gloss = {
 
 $(function() {
   //main
+  if (!magic_gloss.supports_ToDataURL()) {
+    return; //quit if ToDataURL not supported by this browser
+  }
+
   $("img[data-gloss]").each(function(i, obj) {
     $(obj).load(function() {
       if (this.please_glow != false) {
