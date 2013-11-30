@@ -126,14 +126,16 @@ var magic_gloss = {
       context.restore();
 
     };
-    elypse(this, d/2, d/1.3, d/2.7, d/4);  //shadow
+    elypse(this, d/2, d/1.35, d/2.7, d/4);  //shadow
 
 
 
     //copy canvas back to original img
     src_img.please_glow = false;  //do not fire load event again
     src_img.src = canvas.toDataURL("image/png");
-
+    //correct width and height
+    src_img.width = canvas.width;
+    src_img.height = canvas.height;
 
   }    //end main
 
