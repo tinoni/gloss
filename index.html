@@ -13,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="glossifyjs.css" rel="stylesheet">
+    <link href="css/glossifyjs.css" rel="stylesheet">
   </head>
 
   <body>
@@ -46,53 +46,62 @@
     <div class="jumbotron">
       <div class="container">
         <h1>glossify.js</h1>
-        <p class="trn" data-trn-key="subtitle_key">glossify.js is a jQuery plugin that transforms any image into a glossy sphere.</p>
-        <p><a class="btn btn-primary btn-lg trn" role="button" href="https://github.com/tinoni/translate.js" target="_blank">Download glossify.js</a></p>
+        <p class="trn" data-trn-key="subtitle_key">glossify.js is a jQuery plugin that transforms any image into a beautiful glossy sphere.</p>
+        <img src="imgs/r01.jpg" data-gloss data-glosscolor="009999" width="100"/>
+        <img src="imgs/r02.jpg" data-gloss data-glosscolor="009999" data-glossalpha="0.3" width="100"/>
+        <img src="imgs/r03.jpg" data-gloss data-glosscolor="000000" width="100"/>
+        <img src="imgs/r05.jpg" data-gloss data-glosscolor="333333" width="100"/>
+        <p><a class="btn btn-primary btn-lg" role="button" href="#" target="_blank">Download glossify.js</a></p>
       </div>
     </div>
 
     <div class="container">
+      <h2>Documentation</h2>
+      <p>Using glossify.js couldn't be easier: just include the script and use some special attributes with any image you want to glossify. No need to call any script or initialize anything.</p>
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-6">
-          <h2 class="trn">Usage: translate entire page</h2>
-          <p><strong><span class="trn">Step</span> 1</strong>: <span class="trn" data-trn-key="step1">include JQuery and translate.js in your page</span></p>
+          <h3 class="trn">Usage</h3>
+          <p><strong>Step 1</strong>: include JQuery and glossify.js in your page</p>
           <pre>&lt;script src="jquery.js"/&gt;
-&lt;script src="jquery.translate.js"/&gt;</pre>
+&lt;script src="glossify.js"/&gt;</pre>
 
-          <p><strong><span class="trn">Step</span> 2</strong>: <span class="trn" data-trn-key="step2">every text you want translated include the <code>trn</code> class</span></p>
-          <pre>&lt;span class="trn"&gt;text to translate&lt;/span&gt;</pre>
+          <p><strong>Step 2</strong>: every image you want to glossify just include the <code>data-gloss</code> attribute</p>
+          <pre>&lt;image src="g.jpg" data-gloss/&gt;</pre>
+          <img src="imgs/g.jpg" data-gloss/>
 
-          <p><strong><span class="trn">Step</span> 3</strong>: <span class="trn" data-trn-key="step3">create your dictionary</span></p>
-          <pre>var dict = {
-  "Home": {
-    pt: "Início"
-  },
-  "Download plugin": {
-    pt: "Descarregar plugin",
-    en: "Download plugin"
-  }
-}</pre>
-
-          <p><strong><span class="trn">Step</span> 4</strong>: <span class="trn" data-trn-key="step4">initialize the plugin and translate the entire page body</span></p>
-          <pre>var translator = $('body').translate({lang: "en", t: dict}); //use English</pre>
-
-          <p><strong><span class="trn">Step</span> 5</strong>: <span class="trn" data-trn-key="step5">change to another language</span></p>
-          <pre>translator.lang("pt"); //change to Portuguese</pre>
-
-          <p><strong><span class="trn">Step</span> 6</strong>: <span class="trn" data-trn-key="step6">try it</span></p>
-          <p>
-            <a class="btn btn-default lang_selector trn" href="#" role="button" data-value="en">translate to English</a>
-            <a class="btn btn-default lang_selector trn" href="#" role="button"  data-value="pt">translate to Portuguese</a>
-          </p>
         </div>
         <div class="col-md-6">
-          <h2 class="trn">Usage: translate a string</h2>
-          <p class="trn" data-trn-key="string_translate_key">After you initialize the component you can translate a string</p>
-          <pre>var translation = translator.get("Home"); //returns "Início"</pre>
+          <h3 class="trn">Options</h3>
+          <p><strong>Changing the color</strong> is easy: just use the <code>data-glosscolor</code> attribute. If not provided, the default color is black.</p>
+          <pre>&lt;image src="g.jpg" data-gloss data-glosscolor="#ff0000"/&gt;</pre>
+          <img src="imgs/g.jpg" data-gloss data-glosscolor="#ff0000"/>
+
+          <p>You can also <strong>change the alpha</strong> by using the <code>data-glossalpha</code> attribute. If not provided, the default alpha value is 1 (no transparency).</p>
+          <pre>&lt;image src="g.jpg" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5"/&gt;</pre>
+          <img src="imgs/g.jpg" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5"/>
 
        </div>
 
+      </div>
+
+
+      <div>
+        <h2>Cross Platform & No Browser Plugins Needed</h2>
+
+        GoJS allows developers to create far-reaching diagramming web applications across all modern desktop and mobile browsers. HTML5 Canvas is compatible with the latest Android and Apple iOS (iPhone/iPad) phones and tablets.
+
+        GoJS has no JavaScript dependencies and can be used alongside popular frameworks such as jQuery, MooTools, Prototype, and Dojo.
+
+
+        GoJS supports all canvas-enabled browsers, including:
+
+        Internet Explorer 9+
+        Firefox 4+
+        Chrome 10+
+        Safari 5+
+        Opera 11+
+        And almost every smartphone browser
       </div>
 
       <hr>
@@ -131,5 +140,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/glossify.js"></script>
   </body>
 </html>
