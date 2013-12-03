@@ -1,7 +1,8 @@
 /**
- * User: mfernandes
+ * User: mfernandes http://openxrest.com/gloss/
  * Date: 22/11/13
  * Time: 14:42
+ * minify with http://refresh-sf.com/yui/
  */
 
 
@@ -64,7 +65,12 @@ var magic_gloss = {
     context.arc(d/2, d/2, d/2, 0, Math.PI * 2, false);
     context.clip();
     //draw image
-    context.drawImage(src_img, 0, 0, w, h);
+    try {
+      context.drawImage(src_img, 0, 0, w, h);
+    }
+    catch (err) {
+      return; //some problem with this image: nothing to do
+    }
     context.restore();  //end clipping path
 
 

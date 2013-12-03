@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="glossify.js is a jQuery plugin that transforms any image into a beautiful and colourful glossy sphere">
     <meta name="author" content="Manuel Fernandes">
 
-    <title>glossify.js</title>
+    <title>glossify.js v1.0</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,12 +46,14 @@
     <div class="jumbotron">
       <div class="container">
         <h1>glossify.js</h1>
-        <p class="trn" data-trn-key="subtitle_key">glossify.js is a jQuery plugin that transforms any image into a beautiful glossy sphere.</p>
+        <p class="trn" data-trn-key="subtitle_key">glossify.js is a jQuery plugin that transforms any image into a beautiful and colourful glossy sphere.</p>
         <img src="imgs/r01.jpg" data-gloss data-glosscolor="009999" width="100"/>
         <img src="imgs/r02.jpg" data-gloss data-glosscolor="009999" data-glossalpha="0.3" width="100"/>
         <img src="imgs/r03.jpg" data-gloss data-glosscolor="000000" width="100"/>
         <img src="imgs/r05.jpg" data-gloss data-glosscolor="333333" width="100"/>
-        <p><a class="btn btn-primary btn-lg" role="button" href="#" target="_blank">Download glossify.js</a></p>
+        <img src="imgs/r07.jpg" data-gloss data-glosscolor="ff0000" data-glossalpha="0.3" width="100"/>
+        <img src="imgs/r08.jpg" data-gloss data-glosscolor="990099" data-glossalpha="0.5" width="100"/>
+        <p><a class="btn btn-primary btn-lg" role="button" href="#" target="_blank">Download glossify.js v1.0</a></p>
       </div>
     </div>
 
@@ -67,44 +69,100 @@
 &lt;script src="glossify.js"/&gt;</pre>
 
           <p><strong>Step 2</strong>: every image you want to glossify just include the <code>data-gloss</code> attribute</p>
-          <pre>&lt;image src="g.jpg" data-gloss/&gt;</pre>
-          <img src="imgs/g.jpg" data-gloss/>
+          <pre>&lt;image src="html5.png" data-gloss/&gt;</pre>
+          <img src="imgs/html5.png" data-gloss/>
 
         </div>
         <div class="col-md-6">
           <h3 class="trn">Options</h3>
           <p><strong>Changing the color</strong> is easy: just use the <code>data-glosscolor</code> attribute. If not provided, the default color is black.</p>
-          <pre>&lt;image src="g.jpg" data-gloss data-glosscolor="#ff0000"/&gt;</pre>
-          <img src="imgs/g.jpg" data-gloss data-glosscolor="#ff0000"/>
+          <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000"/&gt;</pre>
+          <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000"/>
 
           <p>You can also <strong>change the alpha</strong> by using the <code>data-glossalpha</code> attribute. If not provided, the default alpha value is 1 (no transparency).</p>
-          <pre>&lt;image src="g.jpg" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5"/&gt;</pre>
-          <img src="imgs/g.jpg" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5"/>
+          <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/&gt;</pre>
+          <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/>
 
        </div>
 
       </div>
+      <hr/>
 
 
       <div>
-        <h2>Cross Platform & No Browser Plugins Needed</h2>
+        <h2>More Examples</h2>
 
-        GoJS allows developers to create far-reaching diagramming web applications across all modern desktop and mobile browsers. HTML5 Canvas is compatible with the latest Android and Apple iOS (iPhone/iPad) phones and tablets.
+        <div>
+          <p>Images before glossify</p>
+          <img src="imgs/facebook.png" width="75"/>
+          <img src="imgs/twitter.png" width="75"/>
+          <img src="imgs/pinterest.png" width="75"/>
+          <img src="imgs/linkedin.png" width="75"/>
+          <img src="imgs/googleplus.png" width="75"/>
+          <img src="imgs/tumblr.png" width="75"/>
+          <img src="imgs/flickr.png" width="75"/>
+          <img src="imgs/instagram.png" width="75"/>
+          <img src="imgs/foursquare.png" width="75"/>
+        </div>
 
-        GoJS has no JavaScript dependencies and can be used alongside popular frameworks such as jQuery, MooTools, Prototype, and Dojo.
 
-
-        GoJS supports all canvas-enabled browsers, including:
-
-        Internet Explorer 9+
-        Firefox 4+
-        Chrome 10+
-        Safari 5+
-        Opera 11+
-        And almost every smartphone browser
+        <div>
+          <p>After glossify</p>
+          <img src="imgs/facebook.png" data-gloss data-glosscolor="#265999" width="75"/>
+          <img src="imgs/twitter.png" data-gloss data-glosscolor="#00b0ef" width="75"/>
+          <img src="imgs/pinterest.png" data-gloss data-glosscolor="#ef0021" width="75"/>
+          <img src="imgs/linkedin.png" data-gloss data-glosscolor="#0082b2" width="75"/>
+          <img src="imgs/googleplus.png" data-gloss data-glosscolor="#f32e31" width="75"/>
+          <img src="imgs/tumblr.png" data-gloss data-glosscolor="#174863" width="75"/>
+          <img src="imgs/flickr.png" data-gloss data-glosscolor="#0062dd" width="75"/>
+          <img src="imgs/instagram.png" data-gloss data-glosscolor="#00749c" width="75"/>
+          <img src="imgs/foursquare.png" data-gloss data-glosscolor="#009bca" width="75"/>
+        </div>
       </div>
+      <hr/>
 
-      <hr>
+
+      <div>
+        <h2>Cross Platform & Safe to Use with Older Browsers</h2>
+
+        <img src="imgs/chrome.png" data-gloss width="75" data-glossalpha="0.8" alt="Chrome" title="Chrome"/>
+        <img src="imgs/firefox.png" data-gloss width="75" data-glossalpha="0.8" alt="Firefox" title="Firefox"/>
+        <img src="imgs/ie.png" data-gloss width="75" data-glossalpha="0.8" alt="Internet Explorer" title="Internet Explorer"/>
+        <img src="imgs/opera.png" data-gloss width="75" data-glossalpha="0.8" alt="Opera" title="Opera"/>
+        <img src="imgs/safari.png" data-gloss width="75" data-glossalpha="0.8" alt="Safari" title="Safari"/>
+
+        <p>
+        glossify.js allows developers to create fantastic looking images across all modern desktop and mobile browsers. glossify.js uses HTML5 Canvas which is compatible with the latest Android and Apple iOS (iPhone/iPad) phones and tablets.
+        </p>
+
+        <p>
+          glossify.js is a jQuery plugin.
+        </p>
+
+        List of supported browsers:
+        <ul>
+          <li>Internet Explorer 9+</li>
+          <li>Firefox 2+</li>
+          <li>Chrome 4+</li>
+          <li>Safari 3.1+</li>
+          <li>Opera 9+</li>
+          <li>iOS Safari 3.2+</li>
+          <li>Android 3+</li>
+        </ul>
+
+        <p>glossify.js is safe to use with older browsers. If glossify.js is not supported by the browser then the original image will be displayed as fallback and your site will continue to work. No javascript errors will be thrown.</p>
+
+      </div>
+      <hr/>
+
+
+
+      <div>
+        <h2>Known Limitations</h2>
+        Due to javascript security reasons, glossify.js will not work with images hosted on different domains.
+      </div>
+      <hr/>
+
 
       <footer>
         <p>&copy; Manuel Fernandes 2013</p>
@@ -140,6 +198,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/glossify.js"></script>
+    <script src="js/glossify.min.js"></script>
+
+    <script>
+      if (location.protocol == 'file:') alert("Due to javascript security reasons glossify.js will not work from the file system. To see it working please open this file from a web server.");
+    </script>
   </body>
 </html>
