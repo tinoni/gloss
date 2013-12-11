@@ -42,6 +42,8 @@ var magic_gloss = {
 
 
   main: function (src_img, color, alpha_factor) {
+    if (!$(src_img).is('img')) return;  //if not image then move on
+
     alpha_factor = alpha_factor || 1;
 
     var color_rgb = this.hex2rgb(color);
@@ -181,4 +183,35 @@ $(function() {
   });
 
 
-});
+});  //end magic_gloss
+
+
+
+
+
+
+//jquery plugin
+(function($){
+  $.fn.glossify = function(options) {
+
+    var that = this; //a reference to ourselves
+
+    var settings = {
+      color: "#000000",
+      alpha: 1
+    };
+    settings = $.extend(settings, options || {});
+
+
+    //main
+    //magic_gloss.main(this[0], settings.color, settings.alpha);
+
+    this.each(function(i, obj) {
+      magic_gloss.main(obj, settings.color, settings.alpha);
+    });
+
+
+    return this;
+
+  };
+})(jQuery);

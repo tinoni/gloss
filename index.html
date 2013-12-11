@@ -9,7 +9,7 @@
 
     <meta name="author" content="Manuel Fernandes">
 
-    <title>glossify.js v1.0</title>
+    <title>glossify.js v1.1</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -71,25 +71,34 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-6">
-          <h3 class="trn">Usage</h3>
-          <p><strong>Step 1</strong>: include JQuery and glossify.js in your page</p>
-          <pre>&lt;script src="jquery.js"/&gt;
+          <div>
+            <h3 class="trn">Usage</h3>
+            <p><strong>Step 1</strong>: include JQuery and glossify.js in your page</p>
+            <pre>&lt;script src="jquery.js"/&gt;
 &lt;script src="glossify.js"/&gt;</pre>
 
-          <p><strong>Step 2</strong>: every image you want to glossify just include the <code>data-gloss</code> attribute</p>
-          <pre>&lt;image src="html5.png" data-gloss/&gt;</pre>
-          <img src="imgs/html5.png" data-gloss/>
+            <p><strong>Step 2</strong>: every image you want to glossify just include the <code>data-gloss</code> attribute</p>
+            <pre>&lt;image src="html5.png" data-gloss/&gt;</pre>
+            <img src="imgs/html5.png" data-gloss/>
+          </div>
+
+          <div>
+            <h3 class="trn">Options</h3>
+            <p><strong>Changing the color</strong> is easy: just use the <code>data-glosscolor</code> attribute. If not provided, the default color is black.</p>
+            <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000" width="75"/&gt;</pre>
+            <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000" width="75"/>
+
+            <p>You can also <strong>change the alpha</strong> by using the <code>data-glossalpha</code> attribute. If not provided, the default alpha value is 1 (no transparency).</p>
+            <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/&gt;</pre>
+            <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/>
+          </div>
 
         </div>
         <div class="col-md-6">
-          <h3 class="trn">Options</h3>
-          <p><strong>Changing the color</strong> is easy: just use the <code>data-glosscolor</code> attribute. If not provided, the default color is black.</p>
-          <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000"/&gt;</pre>
-          <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000"/>
-
-          <p>You can also <strong>change the alpha</strong> by using the <code>data-glossalpha</code> attribute. If not provided, the default alpha value is 1 (no transparency).</p>
-          <pre>&lt;image src="html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/&gt;</pre>
-          <img src="imgs/html5.png" data-gloss data-glosscolor="#ff0000" data-glossalpha="0.5" width="75"/>
+          <h3 class="trn">JQuery API</h3>
+          <p>glossify.js is also a JQuery plugin which can be called from your code to transform any image. For instance, to glossify the image whoose id is my_image just issue the following JQuery command:</p>
+          <pre>$('#my_image').glossify({color: "#0000ff", alpha: 1})</pre>
+          <img src="imgs/html5.png" data-gloss data-glosscolor="#0000ff"/>
 
        </div>
 
@@ -213,7 +222,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/glossify.min.js"></script>
+    <script src="js/glossify.js"></script>
 
     <script>
       if (location.protocol == 'file:') alert("Due to javascript security reasons glossify.js will not work from the file system. To see it working please open this file from a web server.");
