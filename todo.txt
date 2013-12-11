@@ -1,0 +1,24 @@
+
+- sell it on
+  http://codecanyon.net/category/javascript/images-and-media - rejected
+  http://jqportal.com/market.html - not applied
+  http://www.codegrape.com/ - applied
+  http://www.mojo-code.com/categories/javascript/ - applied
+  http://html5-ninja.com/#/home - applied
+
+- if there is a onLoad event already attached to the image, save it and call it later
+
+
+- http://caniuse.com/#search=canvas
+- copy docs from here http://www.nwoods.com/components/canvas/gojs-overview.htm
+- use these browser logos for docs https://github.com/paulirish/browser-logos
+- license example https://github.com/wijmo/Wijmo-Complete
+
+- icons:
+  https://github.com/danleech/simpleicons
+  http://fortawesome.github.io/Font-Awesome/3.2.1/icons/
+
+- insert the download link
+  
+- more examples:
+  http://www.netzgesta.de/glossy/
