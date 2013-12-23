@@ -158,6 +158,9 @@ var magic_gloss = {
     src_img.width = canvas.width;
     src_img.height = canvas.height;
 
+    //cleanup
+    canvas = null;
+
   }    //end main
 
 }; //end magic_gloss namespace
