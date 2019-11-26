@@ -4,7 +4,7 @@ glossify.js
 A jQuery plugin that transforms any image into a beautiful and colourful glossy sphere.
 
 ## Home and demo
-View a live [demo](http://www.openxrest.com/gloss/).
+View a live [demo](https://tinoni.github.io/gloss/).
 
 ## Usage
 Step 1: include JQuery and glossify.js in your page
